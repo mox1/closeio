@@ -109,6 +109,14 @@ module Closeio
         delete("#{sms_path}#{id}/")
       end
 
+      #
+      #  Meeting Activities
+      #
+
+      def list_meetings(options = {})
+        get(meeting_path, options)
+      end
+
       private
 
       def activity_path
@@ -133,6 +141,10 @@ module Closeio
 
       def sms_path
         "#{activity_path}sms/"
+      end
+
+      def meeting_path
+        "#{activity_path}meeting/"
       end
     end
   end
